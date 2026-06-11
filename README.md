@@ -31,7 +31,7 @@ Your are encouraged to modify the project structure and code as you see fit. We 
 
 **Important:** Please be aware that adding any additional dependencies or tools may require extra time for setup and integration, so plan accordingly to ensure you can complete the assignment within the given time frame.
 
-**Important:** We expect you to complete the assignment without the help of any AI tools, models, harnesses or assistants. We are not against the use of AI tools, but we want to see your own work and creativity in this assignment.
+**Important:** Moderate use of AI tools (e.g. GitHub Copilot, Claude, ChatGPT) is allowed and reflects real-world development practices. However, we will also evaluate *how* you use AI. We expect you to understand, review, and take ownership of any AI-generated code. Blindly copying output without understanding it will be apparent during the evaluation.
 
 ## API
 
@@ -58,6 +58,10 @@ When running in this mode:
 - All protected endpoints (`POST /bet`, `GET /my-bets`, `DELETE /my-bet/:id`, `GET /my-transactions`) will no longer require an `Authorization` header.
 - Requests will automatically be scoped to the first registered player.
 - You still need to call `POST /register` once to create a player before using the protected endpoints.
+- You do **not** need to call `POST /login` or handle any token — just register a user and start using the protected endpoints directly.
+- Since there is no login flow to retrieve the initial balance, you should mock the user's balance either in local component state or in your store.
+
+> **Note:** All API data is stored in memory. If you stop the process and restart it, all previously registered users, bets, and transactions will be lost.
 
 ## Required Features
 
